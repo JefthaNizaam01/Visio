@@ -102,8 +102,8 @@ body {
     object-fit: contain; /* Prevent distortion */
   }
  
-  /* Call-to-Action Panels */
-  .cta-panels {
+/* Call-to-Action Panels */
+.cta-panels {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -112,34 +112,41 @@ body {
   
   .cta-box {
     flex: 1;
-    max-width: 300px;
-    background: #12233c;
+    width: 484px;
+    height: 210px; /* Adjust height to accommodate the larger text */
+    background: #061C2C;
     color: white;
     padding: 20px;
     text-align: center;
     position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .cta-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  .cta-box a {
-    text-decoration: none;
-    color: #00a6ff;
-    font-weight: bold;
-  }
-  
-  .cta-box:before {
-    content: ">";
-    font-size: 24px;
-    color: #00a6ff;
+  .cta-box .cta-icon {
+    width: 50px; /* Adjust the icon size */
+    height: 50px;
+    object-fit: contain;
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 20px; /* Align the image to the top left */
   }
   
+  .cta-box .cta-text {
+    margin-top: 70px; /* Add space below the image */
+    font-size: 32px; /* Increase the text size */
+    font-weight: normal;
+    color: #FFFFFF;
+    text-decoration: none;
+  } 
+
+  .cta-text {
+    position: absolute;
+    left: 20px;
+  }
+
+  .cta-text .highlight {
+    display: block; /* Moves the word to the next line */
+    font-size: 32px; /* Optionally, make the word larger */
+    margin-top: 5px; /* Add spacing between lines */
+    color: #FFFFFF; /* Optional: Different color for emphasis */
+    
+  }
