@@ -34,49 +34,89 @@ body {
     width: 100%;
   }
   
-  /* Image Slider */
-  .image-slider {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
-    overflow: hidden;
-  }
-  
-  .slider-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide-item {
-    min-width: 100%;
-  }
-  
-  .slide-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-  }
-  
-  .btn-prev {
-    left: 10px;
-  }
-  
-  .btn-next {
-    right: 10px;
-  }
+  /* Image Slider Container */
+.image-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Slider Track */
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slides */
+.slide-item {
+  min-width: 100%;
+}
+
+.slide-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.blue-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  top: 490px;
+  left: 0;
+  width: 40%;
+  height: 60px;
+  background-color: #244ac2;
+  z-index: 1;
+
+}
+
+.black-overlay {
+  position: absolute;
+  top: 490px;
+  right: 0px;
+  width: 18.5%;
+  height: 60px;
+  background-color: black;
+  z-index: 1;
+}
+
+/* Slider Button */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  color: white;
+  font-size: 100px; /* Make the arrow large */
+  font-weight:300;
+  cursor: pointer;
+  z-index: 10;
+
+}
+
+/* Right Arrow Button */
+.btn-next {
+  right: 20px;
+  background: none;
+  color: #fff;
+  border: none;
+  /* font-size: 6.5rem; */
+
+  font-family: Arial, sans-serif; 
+  line-height: 1;
+ 
+}
+
+
   
   /* Intro Section */
   .intro-container {
@@ -112,11 +152,12 @@ body {
   
   .cta-box {
     flex: 1;
+    max-width: 380px;
     width: 484px;
-    height: 210px; /* Adjust height to accommodate the larger text */
+    height: 200px; /* Adjust height to accommodate the larger text */
     background: #061C2C;
     color: white;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
     position: relative;
   }
@@ -150,3 +191,160 @@ body {
     color: #FFFFFF; /* Optional: Different color for emphasis */
     
   }
+
+/* Extra Panels */
+.extra-panels {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  padding: 20px;
+  overflow-x: auto; /* Add horizontal scrolling if content exceeds viewport width */
+}
+
+.extra-box {
+  flex: 0 0 166px; /* Fixed width for each box */
+  height: 38px;
+  background: #244ac2;
+  color: white;
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between;
+   /* Text to start, arrow to end */
+  padding: 0 5px; 
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.extra-arrow {
+  /* width: 16px;  */
+  height: auto;
+}
+/* Responsive Design */
+@media (max-width: 1920px) {
+  .intro-container {
+    gap: 250px;
+  }
+
+  .cta-panels {
+    margin-top: 30px;
+  }
+
+  .extra-panels {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .intro-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .cta-panels {
+    flex-direction: column;
+  }
+
+  .cta-box {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .extra-panels {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .extra-box {
+    flex: 0 0 45%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 720px) {
+  header {
+    padding: 10px;
+  }
+
+  .branding-logo img {
+    height: 30px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .intro-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .intro-text {
+    width: 80%;
+  }
+
+  .cta-panels {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cta-box {
+    width: 90%;
+  }
+
+  .extra-panels {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .extra-box {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+
+  .branding-logo img {
+    height: 30px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .intro-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .intro-text {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .cta-panels {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cta-box {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .extra-panels {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .extra-box {
+    width: 100%;
+    text-align: center;
+  }
+}
