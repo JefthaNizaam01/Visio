@@ -148,7 +148,7 @@ header {
 
 .cta-box:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); */
   background: #061C2C; 
 }
 .cta-box .cta-icon {
